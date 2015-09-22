@@ -4,7 +4,7 @@
   <%= simple_form_for @dude do |f| %>
     <%= f.input :name %>
     <%= f.input :phone %>
-    <div class="hide">
+    <div hidden>
     <%= f.input :inputlattitude, :input_html => {:id => 'lat' } %>
     <%= f.input :inputlongitude, :input_html => {:id => 'lng' } %>
     </div>
