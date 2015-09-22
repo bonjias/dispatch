@@ -1,4 +1,7 @@
 class Dude < ActiveRecord::Base
+	reverse_geocoded_by :inputlattitude, :inputlongitude,
+  :address => :location
+after_validation :reverse_geocode
 	after_create :send_dude_email
 
 

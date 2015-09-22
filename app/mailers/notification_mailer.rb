@@ -6,6 +6,7 @@ class NotificationMailer < ActionMailer::Base
   	@phone = dude.phone
   	@lat = dude.inputlattitude
   	@lon = dude.inputlongitude
+  	@at = dude.location
   	mail(to: "bonjias@gmail.com",
          subject: "New customer request")
   end 

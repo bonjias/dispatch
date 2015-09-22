@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'simple_form'
-
+gem "geocoder"
 gem "figaro", ">= 1.0.0"
 
 # Use ActiveModel has_secure_password
