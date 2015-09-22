@@ -1,19 +1,21 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <h1>Enter Your Place Details</h1>
   <%= simple_form_for @dude do |f| %>
     <%= f.input :name %>
     <%= f.input :phone %>
+    <div class="hide">
     <%= f.input :inputlattitude, :input_html => {:id => 'lat' } %>
     <%= f.input :inputlongitude, :input_html => {:id => 'lng' } %>
+    </div>
      <%= f.submit 'Create', :class => 'btn btn-primary' %>
   <% end %>
 </div>
 
-<button onclick="getLocation()">Find My Spot</button>
-
-<p id="demo"></p>
 
 
 <script>
+
 var x = document.getElementById("demo");
 
 function getLocation() {
@@ -30,4 +32,6 @@ function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;  
 }
+
+$(getLocation);
 </script>
