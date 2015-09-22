@@ -1,0 +1,33 @@
+<h1>Enter Your Place Details</h1>
+  <%= simple_form_for @dude do |f| %>
+    <%= f.input :name %>
+    <%= f.input :phone %>
+    <%= f.input :inputlattitude, :input_html => {:id => 'lat' } %>
+    <%= f.input :inputlongitude, :input_html => {:id => 'lng' } %>
+     <%= f.submit 'Create', :class => 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<button onclick="getLocation()">Find My Spot</button>
+
+<p id="demo"></p>
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+  $('#lat').val(position.coords.latitude);
+  $('#lng').val(position.coords.longitude);
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;  
+}
+</script>
