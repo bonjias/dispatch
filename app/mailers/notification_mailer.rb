@@ -5,7 +5,7 @@ class NotificationMailer < ActionMailer::Base
   @name = dude.name 
   	@phone = dude.phone
   	mail(to: "bonjias@gmail.com",
-         subject: "A comment has been added to your place")
+         subject: "New customer request")
   end 
 
 end
