@@ -4,6 +4,8 @@ class NotificationMailer < ActionMailer::Base
   def dude_posted(dude)
   @name = dude.name 
   	@phone = dude.phone
+  	@lat = inputlattitude
+  	@lon = inputlongitude
   	mail(to: "bonjias@gmail.com",
          subject: "New customer request")
   end 
