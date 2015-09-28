@@ -9,8 +9,12 @@ class DudesController < ApplicationController
 
 	def create
     Dude.create(place_params)
-    redirect_to root_path
+    redirect_to confirm_path
   end
+
+  def confirm
+    @dude = Dude.last 
+  end 
 
   private
 
